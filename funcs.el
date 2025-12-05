@@ -1,0 +1,40 @@
+(defun duplicate-line ()
+  "Duplicate current line"
+  (interactive)
+  (let ((column (- (point) (point-at-bol)))
+        (line (let ((s (thing-at-point 'line t)))
+                (if s (string-remove-suffix "\n" s) ""))))
+    (move-end-of-line 1)
+    (newline)
+    (insert line)
+    (move-beginning-of-line 1)
+    (forward-char column)))
+
+
+;;; Automatic formatting hook for SimpC Mode
+(setq astyle-cmd (string-join [
+"astyle"
+"--style=kr"
+"--align-pointer=type"
+"--squeeze-ws"
+"--unpad-brackets"
+"--squeeze-lines=1"] " "))
+
+(defun astyle-buffer ()
+  (interactive)
+  (let ((saved-line-number (line-number-at-pos)))
+    (shell-command-on-region
+     (point-min)
+     (point-max)
+     astyle-cmd
+     nil
+     t)
+    (goto-line saved-line-number)))
+
+(defun simpc-save-hook ()
+  (when (eq major-mode 'simpc-mode)
+    (message "Applying Astyle formatting.")
+    (astyle-buffer)))
+
+(add-hook 'before-save-hook 'simpc-save-hook)
+
