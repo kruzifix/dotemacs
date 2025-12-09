@@ -14,7 +14,7 @@
  '(whitespace-style
    '(face trailing tabs spaces lines lines-tail lines-char
           missing-newline-at-eof empty indentation::tab
-          indentation::space indentation big-indent
+          indentation::space indentation
           space-after-tab::tab space-after-tab::space space-after-tab
           space-before-tab::tab space-before-tab::space
           space-before-tab space-mark)))
