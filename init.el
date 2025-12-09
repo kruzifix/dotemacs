@@ -21,11 +21,31 @@
 (setq eshell-scroll-to-bottom-on-input 'this)
 ;; Make certain mouse commands more intuitive.
 (setq mouse-yank-at-point t)
-;; The safest, but slowest method for creating backups.
-(setq backup-by-copying t)
-;; Avoid cluttering up project directories with backup files by saving
-;; them to the same place.
-(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
+
+;; Backup files
+(let ((backups-dir (expand-file-name "backups" user-emacs-directory)))
+  (setq backup-directory-alist `(("." . ,backups-dir)))
+  (unless (file-exists-p backups-dir)
+    (make-directory backups-dir)))
+
+(setq backup-by-copying t
+      version-control t
+      kept-new-versions 6
+      kept-old-version 2)
+
+;; Autosave files
+(let ((auto-saves-dir (expand-file-name "autosaves/" user-emacs-directory)))
+  (setq auto-save-file-name-transforms `((".*" ,auto-saves-dir t)))
+  (unless (file-exists-p auto-saves-dir)
+    (make-directory auto-saves-dir)))
+
+(setq auto-save-default t
+      auto-save-timeout 10
+      auto-save-interval 200)
+
+;; These are super annoying ...
+(setq create-lockfiles nil)
+
 ;; Emacs Lisp files can be byte-compiled into `.elc' files, which run
 ;; faster.  By default Emacs prefers `.elc' to `.el' in all cases,
 ;; causing occasional annoyances if you make a change to an Emacs Lisp
@@ -51,14 +71,24 @@
 (load-theme 'gruber-darker :no-confirm)
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
-;(set-face-background 'hl-line nil)
-;(set-face-foreground 'hl-line nil)
-;(set-face-underline  'hl-line t)
+;;(set-face-background 'hl-line nil)
+;;(set-face-foreground 'hl-line nil)
+;;(set-face-underline  'hl-line t)
+(global-whitespace-mode)
+(which-key-mode)
+(which-function-mode)
+
+(global-completion-preview-mode)
+(add-hook 'c++-mode-hook 'eglot-ensure)
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c-ts-mode-hook 'eglot-ensure)
+(add-hook 'c++-ts-mode-hook 'eglot-ensure)
+(add-hook 'before-save-hook 'eglot-format)
 
 ;;; SimpC Mode
-(load-file "./simpc-mode.el")
-(require 'simpc-mode)
-(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
+;;(load-file (expand-file-name "simpc-mode.el" user-emacs-directory))
+;;(require 'simpc-mode)
+;;(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
 ;;; Font
 (set-face-attribute 'default nil :font "Monospace" :height 160)
@@ -66,7 +96,11 @@
 ;;; Defaults
 (setq-default inhibit-splash-screen t
               tab-width 4
-              cursor-type 'bar)
+              c-basic-offset 4
+              cursor-type 'bar
+              compilation-scroll-output 'first-error
+              mouse-wheel-progressive-speed nil
+              which-func-mode t)
 
 ;;; Remove title bar
 (setq default-frame-alist '((undecorated . t)))

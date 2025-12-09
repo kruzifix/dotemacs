@@ -3,6 +3,11 @@
 (keymap-global-unset "C-z")
 (keymap-global-unset "C-x C-c")
 
+(keymap-global-set "<f5>" 'compile)
+(keymap-global-set "S-<f5>" 'kill-compilation)
+(keymap-global-set "<f6>" 'recompile)
+(keymap-global-set "<f9>" 'query-replace)
+(keymap-global-set "<f12>" 'xref-find-definitions)
 
 (keymap-global-set "<escape>" 'keyboard-escape-quit)
 (keymap-global-set "C-c w" 'whitespace-mode)

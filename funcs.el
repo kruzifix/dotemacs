@@ -18,7 +18,8 @@
 "--align-pointer=type"
 "--squeeze-ws"
 "--unpad-brackets"
-"--squeeze-lines=1"] " "))
+"--squeeze-lines=1"
+"--min-conditional-indent=1"] " "))
 
 (defun astyle-buffer ()
   (interactive)
@@ -36,5 +37,5 @@
     (message "Applying Astyle formatting.")
     (astyle-buffer)))
 
-(add-hook 'before-save-hook 'simpc-save-hook)
+;;(add-hook 'before-save-hook 'simpc-save-hook)
 

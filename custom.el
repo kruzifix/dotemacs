@@ -4,9 +4,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(eglot-ignored-server-capabilities '(:inlayHintProvider))
  '(package-selected-packages
-   '(cape consult corfu drag-stuff marginalia move-text multiple-cursors
-          orderless rainbow-mode scad-mode treesit-auto vertico))
+   '(cape consult corfu drag-stuff dumb-jump marginalia move-text
+          multiple-cursors orderless rainbow-mode scad-mode
+          treesit-auto vertico))
  '(whitespace-action nil)
  '(whitespace-line-column 80000000)
  '(whitespace-style
