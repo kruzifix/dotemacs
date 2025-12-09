@@ -10,7 +10,7 @@
           multiple-cursors orderless rainbow-mode scad-mode
           treesit-auto vertico))
  '(whitespace-action nil)
- '(whitespace-line-column 80000000)
+ '(whitespace-line-column 666)
  '(whitespace-style
    '(face trailing tabs spaces lines lines-tail lines-char
           missing-newline-at-eof empty indentation::tab
