@@ -6,7 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(eglot-ignored-server-capabilities '(:inlayHintProvider))
  '(package-selected-packages
-   '(cape consult corfu drag-stuff dumb-jump marginalia move-text
+   '(cape consult corfu drag-stuff dumb-jump magit marginalia move-text
           multiple-cursors orderless rainbow-mode scad-mode
           treesit-auto vertico))
  '(whitespace-action nil)
