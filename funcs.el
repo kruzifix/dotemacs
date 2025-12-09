@@ -39,3 +39,12 @@
 
 ;;(add-hook 'before-save-hook 'simpc-save-hook)
 
+(defvar eglot-modes
+  (list 'c++-mode 'c-mode 'c-ts-mode 'c++-ts-mode)
+  "Modes for which to start eglot and apply eglot-format in the before-save-hook.")
+
+(defun eglot-modes-save-hook ()
+  (when (member major-mode eglot-modes)
+    (message "[eglot-modes-save-hook] Invoking eglot-format")
+    (eglot-format)))
+

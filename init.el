@@ -82,12 +82,17 @@
 (add-hook 'magit-mode-hook
           (lambda () (whitespace-mode -1)))
 
+;; Completion & Eglot
 (global-completion-preview-mode)
+
+;; TODO: Can we use "eglot-modes" here?
 (add-hook 'c++-mode-hook 'eglot-ensure)
 (add-hook 'c-mode-hook 'eglot-ensure)
 (add-hook 'c-ts-mode-hook 'eglot-ensure)
 (add-hook 'c++-ts-mode-hook 'eglot-ensure)
-(add-hook 'before-save-hook 'eglot-format)
+
+(add-hook 'before-save-hook 'eglot-modes-save-hook)
+
 
 ;;; SimpC Mode
 ;;(load-file (expand-file-name "simpc-mode.el" user-emacs-directory))
