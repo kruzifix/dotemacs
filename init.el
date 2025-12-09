@@ -74,9 +74,13 @@
 ;;(set-face-background 'hl-line nil)
 ;;(set-face-foreground 'hl-line nil)
 ;;(set-face-underline  'hl-line t)
-(global-whitespace-mode)
 (which-key-mode)
 (which-function-mode)
+
+;; Whitespace
+(global-whitespace-mode)
+(add-hook 'magit-mode-hook
+          (lambda () (whitespace-mode -1)))
 
 (global-completion-preview-mode)
 (add-hook 'c++-mode-hook 'eglot-ensure)
