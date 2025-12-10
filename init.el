@@ -124,6 +124,10 @@
               mouse-wheel-progressive-speed nil
               which-func-mode t)
 
+(setq dired-listing-switches
+  "-aBhl --group-directories-first --time-style \"+| %d.%m.%Y %H:%M:%S |\"")
+
+
 ;;; Remove title bar
 (unless (eq system-type 'windows-nt)
   (setq default-frame-alist '((undecorated . t))))
