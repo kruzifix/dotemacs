@@ -75,6 +75,7 @@
 ;;(set-face-background 'hl-line nil)
 ;;(set-face-foreground 'hl-line nil)
 ;;(set-face-underline  'hl-line t)
+
 (which-key-mode)
 (which-function-mode)
 
@@ -84,6 +85,7 @@
 (global-whitespace-mode)
 (add-hook 'magit-mode-hook
           (lambda () (whitespace-mode -1)))
+;;(global-word-wrap-whitespace-mode)
 
 ;; Completion & Eglot
 (global-completion-preview-mode)
@@ -96,14 +98,20 @@
 
 (add-hook 'before-save-hook 'eglot-modes-save-hook)
 
-
 ;;; SimpC Mode
 ;;(load-file (expand-file-name "simpc-mode.el" user-emacs-directory))
 ;;(require 'simpc-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
+;; Cfg Mode
+(load-file (expand-file-name "cfg-mode.el" user-emacs-directory))
+(require 'cfg-mode)
+(add-to-list 'auto-mode-alist '("\\.cfg" . cfg-mode))
+
 ;;; Font
-(set-face-attribute 'default nil :font "Monospace" :height 160)
+(if (eq system-type 'windows-nt)
+  (set-frame-font "Adwaita Mono 18" nil t)
+  (set-face-attribute 'default nil :font "Monospace" :height 160))
 
 ;;; Defaults
 (setq-default inhibit-splash-screen t
@@ -117,7 +125,12 @@
               which-func-mode t)
 
 ;;; Remove title bar
-(setq default-frame-alist '((undecorated . t)))
+(unless (eq system-type 'windows-nt)
+  (setq default-frame-alist '((undecorated . t))))
+
+;;; Windows specific bullshit
+(when (eq system-type 'windows-nt)
+  (setq find-program "\"C:/Program Files/Git/usr/bin/find.exe\""))
 
 ;;; Delete selection when starting to type
 (delete-selection-mode 1)
