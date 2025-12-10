@@ -31,7 +31,8 @@
 (setq backup-by-copying t
       version-control t
       kept-new-versions 6
-      kept-old-version 2)
+      kept-old-version 2
+      delete-old-versions t)
 
 ;; Autosave files
 (let ((auto-saves-dir (expand-file-name "autosaves/" user-emacs-directory)))
@@ -77,6 +78,8 @@
 (which-key-mode)
 (which-function-mode)
 
+(setq-default header-line-format '((" " "%+ %b " which-func-format)))
+
 ;; Whitespace
 (global-whitespace-mode)
 (add-hook 'magit-mode-hook
@@ -106,6 +109,8 @@
 (setq-default inhibit-splash-screen t
               tab-width 4
               c-basic-offset 4
+              c-ts-mode-indent-offset 4
+              custom-buffer-indent 4
               cursor-type 'bar
               compilation-scroll-output 'first-error
               mouse-wheel-progressive-speed nil
