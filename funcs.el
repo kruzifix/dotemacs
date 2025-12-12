@@ -48,3 +48,12 @@
     (message "[eglot-modes-save-hook] Invoking eglot-format")
     (eglot-format)))
 
+(defun todo-grep ()
+  (interactive)
+  (grep (concat grep-command
+                " --exclude-dir .git"
+                " --exclude-dir imgui"
+                " --include=\\*.h"
+                " --include=\\*.c"
+                " --include=\\*.cpp"
+                " TODO")))
