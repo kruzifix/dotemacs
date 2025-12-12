@@ -6,6 +6,7 @@
 (keymap-global-set "<f5>" 'compile)
 (keymap-global-set "S-<f5>" 'kill-compilation)
 (keymap-global-set "<f6>" 'recompile)
+(keymap-global-set "<f7>" 'next-error)
 (keymap-global-set "<f9>" 'query-replace)
 (keymap-global-set "<f12>" 'xref-find-definitions)
 
