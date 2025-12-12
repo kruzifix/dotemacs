@@ -125,7 +125,7 @@
               which-func-mode t)
 
 (setq dired-listing-switches
-  "-aBhl --group-directories-first --time-style \"+| %d.%m.%Y %H:%M:%S |\"")
+  "-aBhlv --group-directories-first --time-style \"+| %d.%m.%Y %H:%M:%S |\"")
 
 
 ;;; Remove title bar
