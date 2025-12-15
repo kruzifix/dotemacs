@@ -7,6 +7,7 @@
 (keymap-global-set "S-<f5>" 'kill-compilation)
 (keymap-global-set "<f6>" 'recompile)
 (keymap-global-set "<f7>" 'next-error)
+(keymap-global-set "S-<f7>" 'previous-error)
 (keymap-global-set "<f9>" 'query-replace)
 (keymap-global-set "<f12>" 'xref-find-definitions)
 
@@ -19,6 +20,9 @@
 (keymap-global-set "C-<prior>" 'other-window)
 (keymap-global-set "C-x <up>" 'other-window)
 (keymap-global-set "C-x <down>" 'other-window)
+
+(keymap-global-set "<mouse-8>" 'previous-buffer)
+(keymap-global-set "<mouse-9>" 'next-buffer)
 
 (eval-after-load 'dired
   '(progn
