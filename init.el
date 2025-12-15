@@ -118,6 +118,8 @@
   (set-frame-font "Adwaita Mono 18" nil t)
   (set-face-attribute 'default nil :font "Monospace" :height 160))
 
+(setq text-scale-mode-step 1.05)
+
 ;;; Defaults
 (setq-default inhibit-splash-screen t
               tab-width 4
