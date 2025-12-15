@@ -108,6 +108,11 @@
 (require 'cfg-mode)
 (add-to-list 'auto-mode-alist '("\\.cfg" . cfg-mode))
 
+;; Bpb Mode
+(load-file (expand-file-name "bpb-mode.el" user-emacs-directory))
+(require 'bpb-mode)
+(add-to-list 'auto-mode-alist '("\\.bpb" . bpb-mode))
+
 ;;; Font
 (if (eq system-type 'windows-nt)
   (set-frame-font "Adwaita Mono 18" nil t)
