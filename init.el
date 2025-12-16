@@ -127,7 +127,7 @@
               c-ts-mode-indent-offset 4
               custom-buffer-indent 4
               cursor-type 'bar
-              compilation-scroll-output 'first-error
+              compilation-scroll-output t
               mouse-wheel-progressive-speed nil
               which-func-mode t)
 
