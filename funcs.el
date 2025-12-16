@@ -29,6 +29,17 @@ If point was already at that position, move point to beginning of line."
     (and (= oldpos (point))
          (beginning-of-line))))
 
+(defun goto-matching-paren ()
+  (interactive)
+  (handle-shift-selection)
+  (if (looking-at-p "[\(\<\{\[]")
+      (forward-list)
+    (backward-char)
+    (let ((go-back (looking-at-p "[]\)\>\}]")))
+      (forward-char)
+      (when go-back
+        (backward-list)))))
+
 ;;; Automatic formatting hook for SimpC Mode
 (setq astyle-cmd (string-join [
 "astyle"

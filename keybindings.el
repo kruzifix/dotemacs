@@ -30,6 +30,7 @@
 (keymap-global-set "C-a" 'smart-beginning-of-line)
 (keymap-global-set "<home>" 'smart-beginning-of-line)
 (keymap-global-set "C-s" 'start-searching)
+(keymap-global-set "C-d" 'goto-matching-paren)
 
 ;; Dired
 (eval-after-load 'dired
