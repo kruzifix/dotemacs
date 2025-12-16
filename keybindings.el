@@ -31,6 +31,7 @@
 (keymap-global-set "<home>" 'smart-beginning-of-line)
 (keymap-global-set "C-s" 'start-searching)
 (keymap-global-set "C-d" 'goto-matching-paren)
+(keymap-global-set "C-b" 'consult-bookmark)
 
 ;; Dired
 (eval-after-load 'dired
