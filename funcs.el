@@ -18,6 +18,7 @@ Move point to the first non-whitespace character on this line.
 If point was already at that position, move point to beginning of line."
   (interactive)
   (let ((oldpos (point)))
+    (handle-shift-selection)
     (back-to-indentation)
     (and (= oldpos (point))
          (beginning-of-line))))
