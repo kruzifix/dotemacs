@@ -1,3 +1,9 @@
+(defun start-searching ()
+  (interactive)
+  (if (region-active-p)
+      (consult-line (buffer-substring (region-beginning) (region-end)))
+      (consult-line)))
+
 (defun duplicate-line ()
   "Duplicate current line"
   (interactive)

@@ -29,6 +29,7 @@
 (keymap-global-set "<mouse-9>" 'next-buffer)
 (keymap-global-set "C-a" 'smart-beginning-of-line)
 (keymap-global-set "<home>" 'smart-beginning-of-line)
+(keymap-global-set "C-s" 'start-searching)
 
 ;; Dired
 (eval-after-load 'dired
