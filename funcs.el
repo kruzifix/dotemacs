@@ -40,6 +40,19 @@ If point was already at that position, move point to beginning of line."
       (when go-back
         (backward-list)))))
 
+(defun resize-current-window (delta)
+  (window-resize-no-error nil delta t))
+
+(defun enlarge-current-window ()
+  (interactive)
+  ;; TODO: try to automatically figure out if we should
+  ;; resize horizontally or vertically!
+  (resize-current-window 15))
+
+(defun shrink-current-window ()
+  (interactive)
+  (resize-current-window -15))
+
 ;;; Automatic formatting hook for SimpC Mode
 (setq astyle-cmd (string-join [
 "astyle"

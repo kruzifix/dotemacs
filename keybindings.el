@@ -8,6 +8,10 @@
 (keymap-global-set "C--" 'text-scale-adjust)
 (keymap-global-set "C-x f" 'ido-find-file)
 
+;; Window Manipulation
+(keymap-global-set "C-M-+" 'enlarge-current-window)
+(keymap-global-set "C-M--" 'shrink-current-window)
+
 ;; F-Keys
 (keymap-global-set "<f5>" 'compile)
 (keymap-global-set "S-<f5>" 'kill-compilation)
