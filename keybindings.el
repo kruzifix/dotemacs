@@ -6,6 +6,7 @@
 (keymap-global-set "C-c w" 'whitespace-mode)
 (keymap-global-set "C-+" 'text-scale-adjust)
 (keymap-global-set "C--" 'text-scale-adjust)
+(keymap-global-set "C-x f" 'ido-find-file)
 
 ;; F-Keys
 (keymap-global-set "<f5>" 'compile)
