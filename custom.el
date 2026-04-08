@@ -5,19 +5,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(eglot-ignored-server-capabilities '(:inlayHintProvider))
- '(package-selected-packages
-   '(cape consult corfu drag-stuff dumb-jump magit marginalia move-text
-          multiple-cursors orderless rainbow-mode scad-mode
-          treesit-auto vertico))
+ '(package-selected-packages nil)
  '(whitespace-action nil)
  '(whitespace-line-column 666)
  '(whitespace-style
    '(face trailing tabs spaces lines lines-tail lines-char
           missing-newline-at-eof empty indentation::tab
-          indentation::space indentation
-          space-after-tab::tab space-after-tab::space space-after-tab
-          space-before-tab::tab space-before-tab::space
-          space-before-tab space-mark)))
+          indentation::space indentation space-after-tab::tab
+          space-after-tab::space space-after-tab space-before-tab::tab
+          space-before-tab::space space-before-tab space-mark)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

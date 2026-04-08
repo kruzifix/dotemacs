@@ -103,6 +103,9 @@
 ;;(require 'simpc-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
+;; Arduino Mode
+(load-file (expand-file-name "arduino-mode.el" user-emacs-directory))
+
 ;; Cfg Mode
 (load-file (expand-file-name "cfg-mode.el" user-emacs-directory))
 (require 'cfg-mode)
