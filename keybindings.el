@@ -24,6 +24,7 @@
 ;; Text Manipulation
 (keymap-global-set "S-<delete>" 'kill-whole-line)
 (keymap-global-set "C-," 'duplicate-line)
+(keymap-global-set "C-#" 'comment-or-uncomment-region)
 
 ;; Navigation
 (keymap-global-set "C-<next>" 'other-window)
