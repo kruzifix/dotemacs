@@ -5,7 +5,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(eglot-ignored-server-capabilities '(:inlayHintProvider))
- '(package-selected-packages nil)
+ '(package-selected-packages
+   '(cape consult corfu drag-stuff dumb-jump eglot magit marginalia
+          move-text multiple-cursors orderless rainbow-mode scad-mode
+          treesit-auto vertico))
  '(whitespace-action nil)
  '(whitespace-line-column 666)
  '(whitespace-style
