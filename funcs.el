@@ -95,7 +95,10 @@ If point was already at that position, move point to beginning of line."
   (grep (concat grep-command
                 " --exclude-dir .git"
                 " --exclude-dir imgui"
+                " --exclude-dir build"
                 " --include=\\*.h"
+                " --include=\\*.hpp"
                 " --include=\\*.c"
                 " --include=\\*.cpp"
+                " --include=\\*.ino"
                 " TODO")))
