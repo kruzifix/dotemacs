@@ -7,6 +7,7 @@
 (keymap-global-set "C-+" 'text-scale-adjust)
 (keymap-global-set "C--" 'text-scale-adjust)
 (keymap-global-set "C-x f" 'ido-find-file)
+(keymap-global-set "M-RET" 'eglot-code-actions)
 
 ;; Window Manipulation
 (keymap-global-set "C-M-+" 'enlarge-current-window)
